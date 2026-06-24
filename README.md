@@ -1,3 +1,53 @@
+# BKute n8n Chatbot
+
+BKute là website chatbot hỗ trợ giải đáp thắc mắc cho sinh viên Bách Khoa. Dự án sử dụng Flask để xây dựng giao diện web, SQLite để lưu tài khoản người dùng, và tích hợp widget `@n8n/chat` để gửi câu hỏi đến workflow n8n.
+
+## Chức năng chính
+
+- Đăng ký và đăng nhập bằng mã số sinh viên.
+- Hiển thị giao diện chatbot BKute tích hợp n8n.
+- Cập nhật tên hiển thị và ảnh đại diện.
+- Gửi góp ý cho hệ thống chatbot.
+- Tài khoản admin có MSSV `2111464` có thể xem danh sách góp ý tại `/admin/feedback`.
+
+## Công nghệ sử dụng
+
+- Python, Flask, Flask-SQLAlchemy
+- SQLite
+- HTML, CSS, JavaScript
+- n8n workflow
+- `@n8n/chat`
+
+## Cấu trúc thư mục
+
+```text
+BKute_n8n/
+|-- app.py
+|-- model.py
+|-- package.json
+|-- package-lock.json
+|-- feedback.csv
+|-- instance/
+|   `-- database.db
+|-- static/
+|   |-- style.css
+|   |-- uploads/
+|   `-- ...
+|-- templates/
+|   |-- login.html
+|   |-- register.html
+|   |-- dashboard.html
+|   |-- admin_feedback.html
+|   `-- profile.html
+`-- Báo Cáo ĐA2.pdf
+```
+
+## Yêu cầu trước khi chạy
+
+Cài đặt sẵn:
+
+- Python 3.10 hoặc mới hơn
+- Node.js và npm nếu muốn cài hoặc chạy n8n bằng npm
 - n8n đang chạy ở máy local hoặc một n8n webhook public tương đương
 
 Trong file `templates/dashboard.html`, chatbot đang trỏ đến webhook:
@@ -130,7 +180,7 @@ pip install Flask Flask-SQLAlchemy Werkzeug
 
 ## Kết quả đề tài
 
-Theo nội dung trong `Báo Cáo ĐA2.pdf`, hệ thống đã được triển khai thử nghiệm sau khi deploy website bằng Render. Nhóm bắt đầu thử nghiệm bằng cách đăng ký tài khoản admin với MSSV `2111464`, sau đó cho người dùng khác tạo tài khoản, đăng nhập, trải nghiệm chatbot và gửi góp ý.
+Theo nội dung trong `Báo Cáo ĐA2.pdf`, hệ thống đã được triển khai thử nghiệm sau khi deploy website bằng Render. Nhóm bắt đầu thử nghiệm bằng cách đăng ký tài khoản admin với MSSV, sau đó cho người dùng khác tạo tài khoản, đăng nhập, trải nghiệm chatbot và gửi góp ý.
 
 Các kết quả chính đạt được:
 
